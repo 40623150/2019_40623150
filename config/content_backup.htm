@@ -1,454 +1,778 @@
 <h1>簡介</h1>
-<p>CMSimfly (<a href="https://github.com/chiamingyen/cmsimfly">https://github.com/chiamingyen/cmsimfly)</a> 是一套簡單的網際內容管理系統, 採用 Flask 網際框架, 以 Beautifulsoup 解讀分頁內容.</p>
-<p><img alt="" height="471" src="/images/gocycle4.png" width="587"/></p>
-<h1>目錄結構</h1>
-<p>CMSimfly 的動態系統採用 Python3 + Flask 建構, 並且利用 Beatifulsoup 解讀位於 contig 目錄中的 content.htm 超文件檔案.</p>
-<p>content.htm 檔案可以透過動態系統中的 generate_pages 功能, 將超文件轉為位於 content 目錄中的個別頁面檔案.</p>
-<p>動態系統與靜態系統則共用 downloads, images, static 等目錄, 其中 downloads 目錄存放在動態系統上傳的文件檔, 而 images 目錄則存放動態系統所上傳的影像檔案, 包括 jpg, png 與 gif 等格式圖檔.</p>
-<p>static 目錄則存放在動態與靜態系統所需要的 Javascript 或 Brython 程式檔.</p><h1>頁面編輯</h1>
-<p>CMSimfly 動態系統的網際編輯器採用 <a href="https://www.tiny.cloud/">TinyMCE4</a>, 可以放入一般超文件,  納入圖檔, 嵌入影片連結, 並且加入帶有行數的原始碼.</p>
-<p>透過 File Upload 功能, 可以一次上傳多個檔案,  存入 downloads 目錄中儲存, 之後各頁面可以引入對應連結.</p>
-<p>而圖檔的上傳與引用與一般檔案類似, 但上傳後存入 images 目錄中.</p>
-<h2>插入程式碼</h2>
-<p>CMSimfly 目前使用 Syntaxhighlighter 3.0.83:</p>
-<p> <a href="http://alexgorbatchev.com/SyntaxHighlighter/">http://alexgorbatchev.com/SyntaxHighlighter/</a> </p>
-<p>進行頁面中的程式碼高亮顯示.</p>
-<h3>Java 程式碼</h3>
-<pre class="brush:java;auto-links:false;toolbar:false" contenteditable="false">import java.util.Scanner;
+<h5>協同產品設計實習-40623150</h5>
+<p>課程起源：<a href="https://2019wcm.blogspot.com/2019/01/blog-post.html">https://2019wcm.blogspot.com/2019/01/blog-post.html</a></p>
+<p>倉儲:<a href="https://github.com/40623150/40623150">https://github.com/40623150/40623150</a></p><h1>期末課程內容</h1>
+<p><span>操作影片課程內容整理</span></p>
+<h2>onshape 協同操作</h2>
+<h3>零組件繪製</h3>
+<h4>W11</h4>
+<p>onshape零件繪製工作分配</p>
+<h4>W12</h4>
+<p><span>1.球檯<a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/297ac7dcd33e287f2fb26ba8">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/297ac7dcd33e287f2fb26ba8</a></span></p>
+<p><span><img alt="" height="377" src="/images/ p37_23-01-51.png" width="860"/><img alt="" height="931" src="/images/未命名.png" width="1920"/></span></p>
+<p><span>2.球員<a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/a0efa155cb9f756b7faf82a3">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/a0efa155cb9f756b7faf82a3</a></span></p>
+<p><span><img alt="" height="377" src="/images/ p37_23-02-30.png" width="860"/><img alt="" height="926" src="/images/1.png" width="1920"/></span></p>
+<p>3.桿子<a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/078b83275bd9ee8852f92aac">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/078b83275bd9ee8852f92aac</a></p>
+<p><span><img alt="" height="377" src="/images/ p37_23-03-17.png" width="860"/><img alt="" height="931" src="/images/2.png" width="1920"/></span></p>
+<p>4.手把<a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/31188036faf28599f6bbf14a">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/31188036faf28599f6bbf14a</a></p>
+<p><span><img alt="" height="377" src="/images/ p37_23-03-31.png" width="860"/><img alt="" height="926" src="/images/3.png" width="1920"/></span></p>
+<p>5.阻擋頭<a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/bdad01c699ee829c47e15cff">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/bdad01c699ee829c47e15cff</a></p>
+<p><span><img alt="" height="377" src="/images/ p37_23-03-49.png" width="860"/><img alt="" height="929" src="/images/4.png" width="1920"/></span></p>
+<p>6.承坐<a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/40e25ee1c83a686284a42cb7">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/40e25ee1c83a686284a42cb7</a></p>
+<p><span><img alt="" height="377" src="/images/ p37_23-07-14.png" width="860"/><img alt="" height="934" src="/images/5.png" width="1920"/></span></p><h3>零件工程圖</h3>
+<h4>W15</h4>
+<p><span>零件 1.</span></p>
+<p><a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/7f5c211fe41fc4d1504150bd"><span>https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/7f5c211fe41fc4d1504150bd</span></a></p>
+<p><span><img alt="" height="621" src="/images/ p37_22-22-24.png" width="878"/><img alt="" height="931" src="/images/p37_22-22-24.png" width="1317"/></span></p>
+<p><span>零件 2. 3. 4.</span></p>
+<p><a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/97fdd5108662b99be56c9e32">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/97fdd5108662b99be56c9e32</a></p>
+<p><span><img alt="" height="621" src="/images/ p37_22-23-31.png" width="878"/><img alt="" height="931" src="/images/p37_22-23-31.png" width="1317"/></span></p>
+<p><span>零件 5. 6.</span></p>
+<p><a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/85a379f5f304d1a1612e182f">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/85a379f5f304d1a1612e182f</a></p>
+<p><span><img alt="" height="621" src="/images/ p37_22-24-17.png" width="878"/><img alt="" height="931" src="/images/p37_22-24-17.png" width="1317"/></span></p>
+<h5>W16</h5>
+<h5>組合圖</h5>
+<p><a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/385c4cd999fe42054114a1c5">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/385c4cd999fe42054114a1c5</a></p>
+<p><img alt="" height="840" src="/images/組合圖.PNG" width="1186"/></p>
+<h4>BOM表</h4>
+<p><img alt="" height="384" src="/images/BOM表.PNG" width="401"/></p>
+<h4>3D 零組件爆炸圖</h4>
+<p><a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/v/a319ab46d811cbeeca590058/e/f988ed519cdd046de59489e1">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/v/a319ab46d811cbeeca590058/e/f988ed519cdd046de59489e1</a></p>
+<p><img alt="" height="925" src="/images/6.png" width="1920"/></p><h2>V-rep 動態模擬</h2>
+<h3>手足球自動回擊</h3>
+<h4>W13</h4>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/gjz6wJoysU0" width="560"></iframe></p>
+<h3>Lua鍵盤控制球員</h3>
+<h4>W14</h4>
+<p>學習如何寫程式，按照老師給的檔案一步一步操作完成。</p>
+<p>使用鍵盤W S D 來操控球員<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/aPPbrZm339c" width="560"></iframe></p>
+<h4><a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g6/blob/gh-pages/vrep/football_w11.ttt">檔案下載</a></h4>
+<p>參考資料:<a href="https://www.youtube.com/watch?v=Lc4GaaS7-jA">https://www.youtube.com/watch?v=Lc4GaaS7-jA</a></p>
+<h3>python手足球鍵盤控制雙人對打</h3>
+<h4>W14</h4>
+<p>與組員討論過後，請教會寫程式的同學，一同編寫完成。</p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/StYcx4lytco" width="560"></iframe></p>
+<h5><a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g6/tree/gh-pages/vrep%E6%AA%94%E6%A1%88/handfootball(pp)">檔案下載</a></h5>
+<p><span>程式碼:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import vrep
+import sys, math
+import keyboard
+# child threaded script: 
+# 內建使用 port 19997 若要加入其他 port, 在  serve 端程式納入
+#simExtRemoteApiStart(19999)
+  
+vrep.simxFinish(-1)
+  
+clientID = vrep.simxStart('127.0.0.1', 19997, True, True, 5000, 5)
+KickBallV = 360  
+n=1
+U_KickBallVel = (math.pi/180)*KickBallV
+D_KickBallVel = -(math.pi/180)*KickBallV
+if clientID!= -1:
+    print("Connected to remote server")
+else:
+    print('Connection not successful')
+    sys.exit('Could not connect')
 
-public class Life {
-    public static void show(boolean[][] grid){
-        String s = "";
-        for(boolean[] row : grid){
-            for(boolean val : row)
-                if(val)
-                    s += "*";
-                else
-                    s += ".";
-            s += "\n";
-        }
-        System.out.println(s);
-    }
-    
-    public static boolean[][] gen(){
-        boolean[][] grid = new boolean[10][10];
-        for(int r = 0; r &lt; 10; r++)
-            for(int c = 0; c &lt; 10; c++)
-                if( Math.random() &gt; 0.7 )
-                    grid[r][c] = true;
-        return grid;
-    }
-    
-    public static void main(String[] args){
-        boolean[][] world = gen();
-        show(world);
-        System.out.println();
-        world = nextGen(world);
-        show(world);
-        Scanner s = new Scanner(System.in);
-        while(s.nextLine().length() == 0){
-            System.out.println();
-            world = nextGen(world);
-            show(world);
+errorCode,Sphere_handle=vrep.simxGetObjectHandle(clientID,'Sphere',vrep.simx_opmode_oneshot_wait)
+errorCode,lmov_handle=vrep.simxGetObjectHandle(clientID,'lmov', vrep.simx_opmode_oneshot_wait)
+errorCode,rmov_handle=vrep.simxGetObjectHandle(clientID,'rmov',vrep.simx_opmode_oneshot_wait)
+errorCode,lrev_handle=vrep.simxGetObjectHandle(clientID,'lrev',vrep.simx_opmode_oneshot_wait)
+errorCode,rrev_handle=vrep.simxGetObjectHandle(clientID,'rrev',vrep.simx_opmode_oneshot_wait)
+
+
+vrep.simxSetJointTargetVelocity(clientID,lmov_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,rmov_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,lrev_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,rrev_handle,0,vrep.simx_opmode_oneshot_wait)
+
+vrep.simxStartSimulation(clientID,vrep.simx_opmode_oneshot_wait)
+#vrep.simxSetJointTargetVelocity(clientID,P1_handle,5,vrep.simx_opmode_oneshot_wait)
+while True:
+    try:
+            if keyboard.is_pressed('w'): 
+                vrep.simxSetJointTargetVelocity(clientID,lrev_handle,U_KickBallVel ,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('x'):  
+                vrep.simxSetJointTargetVelocity(clientID,lrev_handle,D_KickBallVel ,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('a'):  
+                vrep.simxSetJointTargetVelocity(clientID,lmov_handle,-1,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('s'):  
+                vrep.simxSetJointTargetVelocity(clientID,lmov_handle,0,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('d'):  
+                vrep.simxSetJointTargetVelocity(clientID,lmov_handle,1,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('5'):  
+                vrep.simxSetJointTargetVelocity(clientID,rrev_handle,U_KickBallVel ,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('0'):  
+                vrep.simxSetJointTargetVelocity(clientID,rrev_handle,D_KickBallVel ,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('3'):  
+                vrep.simxSetJointTargetVelocity(clientID,rmov_handle,-1,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('2'):  
+                vrep.simxSetJointTargetVelocity(clientID,rmov_handle,0,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('1'):  
+                vrep.simxSetJointTargetVelocity(clientID,rmov_handle,1,vrep.simx_opmode_oneshot_wait)
+            else:
+                pass
+    except:
+            break</pre>
+<h3>python手足球電腦對人</h3>
+<h4>W15</h4>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/UJrygESYJV4" width="560"></iframe></p>
+<h5><a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g6/tree/gh-pages/vrep%E6%AA%94%E6%A1%88/handfootball(pc)">檔案下載</a></h5>
+<p>程式碼:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import vrep
+import sys, math
+import keyboard
+# child threaded script: 
+# 內建使用 port 19997 若要加入其他 port, 在  serve 端程式納入
+#simExtRemoteApiStart(19999)
+  
+vrep.simxFinish(-1)
+  
+clientID = vrep.simxStart('127.0.0.1', 19997, True, True, 5000, 5)
+KickBallV = 360  
+n=1
+U_KickBallVel = (math.pi/180)*KickBallV
+D_KickBallVel = -(math.pi/180)*KickBallV
+if clientID!= -1:
+    print("Connected to remote server")
+else:
+    print('Connection not successful')
+    sys.exit('Could not connect')
+
+errorCode,Sphere_handle=vrep.simxGetObjectHandle(clientID,'Sphere',vrep.simx_opmode_oneshot_wait)
+errorCode,lmov_handle=vrep.simxGetObjectHandle(clientID,'lmov', vrep.simx_opmode_oneshot_wait)
+errorCode,rmov_handle=vrep.simxGetObjectHandle(clientID,'rmov',vrep.simx_opmode_oneshot_wait)
+errorCode,lrev_handle=vrep.simxGetObjectHandle(clientID,'lrev',vrep.simx_opmode_oneshot_wait)
+errorCode,rrev_handle=vrep.simxGetObjectHandle(clientID,'rrev',vrep.simx_opmode_oneshot_wait)
+errorCode,R_handle=vrep.simxGetObjectHandle(clientID,'R',vrep.simx_opmode_oneshot_wait)
+errorCode,L_handle=vrep.simxGetObjectHandle(clientID,'L',vrep.simx_opmode_oneshot_wait)
+
+
+vrep.simxSetJointTargetVelocity(clientID,lmov_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,rmov_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,lrev_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,rrev_handle,0,vrep.simx_opmode_oneshot_wait)
+def speed(handle,speed):
+    errorCode = vrep.simxSetJointTargetVelocity(clientID,handle,speed,vrep.simx_opmode_oneshot_wait)
+vrep.simxStartSimulation(clientID,vrep.simx_opmode_oneshot_wait)
+#vrep.simxSetJointTargetVelocity(clientID,P1_handle,5,vrep.simx_opmode_oneshot_wait)
+while True:
+        errorCode,position_LB=vrep.simxGetObjectPosition(clientID,lrev_handle,-1,vrep.simx_opmode_oneshot)
+        errorCode,position_S=vrep.simxGetObjectPosition(clientID,Sphere_handle,-1,vrep.simx_opmode_oneshot)
+        BB =position_S[1] - position_LB[1] #左右
+        BBB =position_S[0] - position_LB[0]#前後
+        #print(position_S)
+        if BBB &lt;0.07:
+            speed(lrev_handle, D_KickBallVel)
+        elif BBB &gt;= 0.07:
+            speed(lrev_handle, U_KickBallVel)
+        else:
+            pass
+        try:
+            if keyboard.is_pressed('5'): 
+                vrep.simxSetJointTargetVelocity(clientID,rrev_handle,U_KickBallVel,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('0'):  
+                vrep.simxSetJointTargetVelocity(clientID,rrev_handle,D_KickBallVel,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('3'):  
+                vrep.simxSetJointTargetVelocity(clientID,rmov_handle,-1,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('2'):  
+                vrep.simxSetJointTargetVelocity(clientID,rmov_handle,0,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('1'):  
+                vrep.simxSetJointTargetVelocity(clientID,rmov_handle,1,vrep.simx_opmode_oneshot_wait)
+            else:
+                pass
+        except:
+                break
+        Mv = BB*2.3
+        vrep.simxSetJointTargetVelocity(clientID,lmov_handle,Mv,vrep.simx_opmode_oneshot_wait)</pre>
+<h3>python手足球電腦對電腦</h3>
+<h4>W16</h4>
+<p>經過前面幾周練習後，自己慢慢摸索改進，雖然仍有一些不足，會持續除錯。</p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/yj4XemS4JEA" width="560"></iframe></p>
+<h5><a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g6/tree/gh-pages/vrep%E6%AA%94%E6%A1%88/handfootball(cc)">檔案下載</a></h5>
+<p><span>版本一程式碼:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import vrep
+import sys, math
+import keyboard
+# child threaded script: 
+# 內建使用 port 19997 若要加入其他 port, 在  serve 端程式納入
+#simExtRemoteApiStart(19999)
+  
+vrep.simxFinish(-1)
+  
+clientID = vrep.simxStart('127.0.0.1', 19997, True, True, 5000, 5)
+KickBallV = 360  
+up_KickBallVel = (math.pi/180)*KickBallV
+d_KickBallVel = -(math.pi/180)*KickBallV
+if clientID!= -1:
+    print("Connected to remote server")
+else:
+    print('Connection not successful')
+    sys.exit('Could not connect')
+
+errorCode,Sphere_handle=vrep.simxGetObjectHandle(clientID,'Sphere',vrep.simx_opmode_oneshot_wait)
+errorCode,lmov_handle=vrep.simxGetObjectHandle(clientID,'lmov', vrep.simx_opmode_oneshot_wait)
+errorCode,rmov_handle=vrep.simxGetObjectHandle(clientID,'rmov',vrep.simx_opmode_oneshot_wait)
+errorCode,lrev_handle=vrep.simxGetObjectHandle(clientID,'lrev',vrep.simx_opmode_oneshot_wait)
+errorCode,rrev_handle=vrep.simxGetObjectHandle(clientID,'rrev',vrep.simx_opmode_oneshot_wait)
+errorCode,R_handle=vrep.simxGetObjectHandle(clientID,'R',vrep.simx_opmode_oneshot_wait)
+errorCode,L_handle=vrep.simxGetObjectHandle(clientID,'L',vrep.simx_opmode_oneshot_wait)
+
+
+vrep.simxSetJointTargetVelocity(clientID,lmov_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,rmov_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,lrev_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,rrev_handle,0,vrep.simx_opmode_oneshot_wait)
+def speed(handle,speed):
+    errorCode = vrep.simxSetJointTargetVelocity(clientID,handle,speed,vrep.simx_opmode_oneshot_wait)
+vrep.simxStartSimulation(clientID,vrep.simx_opmode_oneshot_wait)
+#vrep.simxSetJointTargetVelocity(clientID,P1_handle,5,vrep.simx_opmode_oneshot_wait)
+while True:
+        errorCode,position_LB=vrep.simxGetObjectPosition(clientID,lrev_handle,-1,vrep.simx_opmode_oneshot)
+        errorCode,position_S=vrep.simxGetObjectPosition(clientID,Sphere_handle,-1,vrep.simx_opmode_oneshot)
+        errorCode,position_RB=vrep.simxGetObjectPosition(clientID,rrev_handle,-1,vrep.simx_opmode_oneshot)
+        BB =position_S[1] - position_LB[1] #左右
+        BBB =position_S[0] - position_LB[0]#前後
+        AA =position_S[1] - position_RB[1] #左右
+        AAA =position_S[0] - position_RB[0]#前後
+        #print(position_S)
+        if BBB &lt;0.07:
+            speed(lrev_handle, d_KickBallVel)
+        elif BBB &gt;= 0.07:
+            speed(lrev_handle, up_KickBallVel)
+        if AAA &gt;-0.07:
+            speed(rrev_handle, up_KickBallVel)
+        elif AAA &lt;= -0.07:
+            speed(rrev_handle, d_KickBallVel)
+        else:
+            pass
+        Mv = BB*3.3
+        vrep.simxSetJointTargetVelocity(clientID,lmov_handle,Mv,vrep.simx_opmode_oneshot_wait)
+        Mvv = AA*3.3
+        vrep.simxSetJointTargetVelocity(clientID,rmov_handle,Mvv,vrep.simx_opmode_oneshot_wait)</pre>
+<h5></h5>
+<p>版本二是利用歐氏距離編寫球員追球的速度，讓球員在距離球很遠時會加速追球，在距離很近時會慢慢修正。</p>
+<p>且利用歐氏距離可以改善修正發散的現象。</p>
+<p>以下是版本一與版本二程式的比較影片。</p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/EaPQkphUkr0" width="560"></iframe></p>
+<p>版本二程式碼:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import vrep
+import sys, math
+import keyboard
+from math import sqrt
+# child threaded script: 
+# 內建使用 port 19997 若要加入其他 port, 在  serve 端程式納入
+#simExtRemoteApiStart(19999)
+  
+vrep.simxFinish(-1)
+  
+clientID = vrep.simxStart('127.0.0.1', 19997, True, True, 5000, 5)
+KickBallV = 720
+up_KickBallVel = (math.pi/180)*KickBallV
+d_KickBallVel = -(math.pi/180)*KickBallV
+if clientID!= -1:
+    print("Connected to remote server")
+else:
+    print('Connection not successful')
+    sys.exit('Could not connect')
+
+errorCode,Sphere_handle=vrep.simxGetObjectHandle(clientID,'Sphere',vrep.simx_opmode_oneshot_wait)
+errorCode,lmov_handle=vrep.simxGetObjectHandle(clientID,'lmov', vrep.simx_opmode_oneshot_wait)
+errorCode,rmov_handle=vrep.simxGetObjectHandle(clientID,'rmov',vrep.simx_opmode_oneshot_wait)
+errorCode,lrev_handle=vrep.simxGetObjectHandle(clientID,'lrev',vrep.simx_opmode_oneshot_wait)
+errorCode,rrev_handle=vrep.simxGetObjectHandle(clientID,'rrev',vrep.simx_opmode_oneshot_wait)
+errorCode,R_handle=vrep.simxGetObjectHandle(clientID,'R',vrep.simx_opmode_oneshot_wait)
+errorCode,L_handle=vrep.simxGetObjectHandle(clientID,'L',vrep.simx_opmode_oneshot_wait)
+
+
+vrep.simxSetJointTargetVelocity(clientID,lmov_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,rmov_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,lrev_handle,0,vrep.simx_opmode_oneshot_wait)
+vrep.simxSetJointTargetVelocity(clientID,rrev_handle,0,vrep.simx_opmode_oneshot_wait)
+def speed(handle,speed):
+    errorCode = vrep.simxSetJointTargetVelocity(clientID,handle,speed,vrep.simx_opmode_oneshot_wait)
+vrep.simxStartSimulation(clientID,vrep.simx_opmode_oneshot_wait)
+#vrep.simxSetJointTargetVelocity(clientID,P1_handle,5,vrep.simx_opmode_oneshot_wait)
+while True:
+        errorCode,position_LB=vrep.simxGetObjectPosition(clientID,lrev_handle,-1,vrep.simx_opmode_oneshot)
+        errorCode,position_S=vrep.simxGetObjectPosition(clientID,Sphere_handle,-1,vrep.simx_opmode_oneshot)
+        errorCode,position_RB=vrep.simxGetObjectPosition(clientID,rrev_handle,-1,vrep.simx_opmode_oneshot)
+        BB =position_S[1] - position_LB[1] #左右
+        BBB =position_S[0] - position_LB[0]#前後
+        AA =position_S[1] - position_RB[1] #左右
+        AAA =position_S[0] - position_RB[0]#前後
+        #print(position_S)
+        #print(AAA)
+        if AAA&gt;0:
+            AAA=-AAA
+        if BBB&lt;0:
+            BBB=-BBB
+        
+        #print((sqrt(AA**2+AAA**2)+AAA))
+        if sqrt(AA**2+AAA**2) and sqrt(BB**2+BBB**2):
+            dist_b2PR=5*(sqrt(AA**2+AAA**2)+AAA)+0.8*sqrt(AA**2+AAA**2)+2*((sqrt(AA**2+AAA**2)+AAA)/sqrt(AA**2+AAA**2))+2.5
+            dist_b2PL=5*(sqrt(BB**2+BBB**2)-BBB)+0.8*sqrt(BB**2+BBB**2)+2*((sqrt(BB**2+BBB**2)-BBB)/sqrt(BB**2+BBB**2))+2.5
+        else:
+            dist_b2PR=0
+            dist_b2PL=0
             
-        }
-    }
-    
-    public static boolean[][] nextGen(boolean[][] world){
-        boolean[][] newWorld 
-            = new boolean[world.length][world[0].length];
-        int num;
-        for(int r = 0; r &lt; world.length; r++){
-            for(int c = 0; c &lt; world[0].length; c++){
-                num = numNeighbors(world, r, c);
-                if( occupiedNext(num, world[r][c]) )
-                    newWorld[r][c] = true;
-            }
-        }
-        return newWorld;
-    }
-    
-    public static boolean occupiedNext(int numNeighbors, boolean occupied){
-        if( occupied &amp;&amp; (numNeighbors == 2 || numNeighbors == 3))
-            return true;
-        else if (!occupied &amp;&amp; numNeighbors == 3)
-            return true;
-        else
-            return false;
-    }
-
-    private static int numNeighbors(boolean[][] world, int row, int col) {
-        int num = world[row][col] ? -1 : 0;
-        for(int r = row - 1; r &lt;= row + 1; r++)
-            for(int c = col - 1; c &lt;= col + 1; c++)
-                if( inbounds(world, r, c) &amp;&amp; world[r][c] )
-                    num++;
-
-        return num;
-    }
-
-    private static boolean inbounds(boolean[][] world, int r, int c) {
-        return r &gt;= 0 &amp;&amp; r &lt; world.length &amp;&amp; c &gt;= 0 &amp;&amp;
-        c &lt; world[0].length;
-    }
-
-}</pre>
+        if BBB &lt;0.07:
+            speed(lrev_handle, d_KickBallVel)
+            #speed(lrev_handle, up_KickBallVel)
+            #print('b down')
+        elif BBB &gt; 0.04:
+            speed(lrev_handle, up_KickBallVel)
+            #print('b up')
+            
+        if AAA &gt;-0.07:
+            speed(rrev_handle, up_KickBallVel)
+            #speed(rrev_handle, d_KickBallVel)
+            #print( 'a up')
+        elif AAA &lt; -0.04:
+            speed(rrev_handle, d_KickBallVel)
+            #print('a down')
+        else:
+            pass
+        Mv = BB*dist_b2PL
+        vrep.simxSetJointTargetVelocity(clientID,lmov_handle,Mv,vrep.simx_opmode_oneshot_wait)
+        Mvv = AA*dist_b2PR
+        vrep.simxSetJointTargetVelocity(clientID,rmov_handle,Mvv,vrep.simx_opmode_oneshot_wait)</pre>
+<h2>期末報告</h2>
+<p>期末報告影片:</p>
 <p></p>
-<h3>Python 程式碼</h3>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def parse_content():
-    """use bs4 and re module functions to parse content.htm"""
-    #from pybean import Store, SQLiteWriter
-    # if no content.db, create database file with cms table
-    '''
-    if not os.path.isfile(config_dir+"content.db"):
-        library = Store(SQLiteWriter(config_dir+"content.db", frozen=False))
-        cms = library.new("cms")
-        cms.follow = 0
-        cms.title = "head 1"
-        cms.content = "content 1"
-        cms.memo = "first memo"
-        library.save(cms)
-        library.commit()
-    '''
-    # if no content.htm, generate a head 1 and content 1 file
-    if not os.path.isfile(config_dir+"content.htm"):
-        # create content.htm if there is no content.htm
-        File = open(config_dir + "content.htm", "w", encoding="utf-8")
-        File.write("&lt;h1&gt;head 1&lt;/h1&gt;content 1")
-        File.close()
-    subject = file_get_contents(config_dir+"content.htm")
-    # deal with content without content
-    if subject == "":
-        # create content.htm if there is no content.htm
-        File = open(config_dir + "content.htm", "w", encoding="utf-8")
-        File.write("&lt;h1&gt;head 1&lt;/h1&gt;content 1")
-        File.close()
-        subject = "&lt;h1&gt;head 1&lt;/h1&gt;content 1"
-    # initialize the return lists
-    head_list = []
-    level_list = []
-    page_list = []
-    # make the soup out of the html content
-    soup = bs4.BeautifulSoup(subject, 'html.parser')
-    # 嘗試解讀各種情況下的標題
-    soup = _remove_h123_attrs(soup)
-    # 改寫 content.htm 後重新取 subject
-    with open(config_dir + "content.htm", "wb") as f:
-        f.write(soup.encode("utf-8"))
-    subject = file_get_contents(config_dir+"content.htm")
-    # get all h1, h2, h3 tags into list
-    htag= soup.find_all(['h1', 'h2', 'h3'])
-    n = len(htag)
-    # get the page content to split subject using each h tag
-    temp_data = subject.split(str(htag[0]))
-    if len(temp_data) &gt; 2:
-        subject = str(htag[0]).join(temp_data[1:])
-    else:
-        subject = temp_data[1]
-    if n &gt;1:
-            # i from 1 to i-1
-            for i in range(1, len(htag)):
-                head_list.append(htag[i-1].text.strip())
-                # use name attribute of h* tag to get h1, h2 or h3
-                # the number of h1, h2 or h3 is the level of page menu
-                level_list.append(htag[i-1].name[1])
-                temp_data = subject.split(str(htag[i]))
-                if len(temp_data) &gt; 2:
-                    subject = str(htag[i]).join(temp_data[1:])
-                else:
-                    subject = temp_data[1]
-                # cut the other page content out of htag from 1 to i-1
-                cut = temp_data[0]
-                # add the page content
-                page_list.append(cut)
-    # last i
-    # add the last page title
-    head_list.append(htag[n-1].text.strip())
-    # add the last level
-    level_list.append(htag[n-1].name[1])
-    temp_data = subject.split(str(htag[n-1]))
-    # the last subject
-    subject = temp_data[0]
-    # cut the last page content out
-    cut = temp_data[0]
-    # the last page content
-    page_list.append(cut)
-    return head_list, level_list, page_list
-
-</pre>
+<p>評分比例:</p>
+<p>1.學員出席 (20%)<br/>自評20分</p>
+<p>2.Github 倉儲管理 (20%)<br/>自評12分</p>
+<p>3.Onshape 協同操作 (20%)<br/>自評13分</p>
+<p>4.V-rep 模擬 (20%)<br/>自評15分</p>
+<p>5.程式開發 (20%)<br/>自評10分</p>
+<p>總分70分</p>
+<p>但因影片延期繳交只求老師能給60分</p>
 <p></p>
-<h3>C或C++程式碼</h3>
-<p>請注意, 目前 CMSimfly 標題內文無法解讀 "/" 符號, 因此若本頁面的標題為  "C/C++程式碼", 則無法進行分頁.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* Runge Kutta for a set of first order differential equations */
- 
-#include &lt;stdio.h&gt;
-#include &lt;math.h&gt;
- 
-#define N 2 /* number of first order equations */
-#define dist 0.1 /* stepsize in t*/
-#define MAX 30.0 /* max for t */
- 
-FILE *output; /* internal filename */
-FILE *output1; /* internal filename */
-// 利用 pipe 呼叫 gnuplot 繪圖
-FILE *pipe;
- 
-void runge4(double x, double y[], double step); /* Runge-Kutta function */
-double f(double x, double y[], int i); /* function for derivatives */
- 
-void main(){
- 
-  double t, y[N];
-  int j;
- 
-  output=fopen("osc.dat", "w"); /* external filename */
-  output1=fopen("osc1.dat", "w"); /* external filename */
- 
-  y[0]=1.0; /* initial position */
-  y[1]=0.0; /* initial velocity */
- 
-  //fprintf(output, "0\t%f\n", y[0]);
- 
-  for (j=1; j*dist&lt;=MAX ;j++) /* time loop */{
- 
-    t=j*dist;
-    runge4(t, y, dist);
-    fprintf(output, "%f\t%f\n", t, y[0]);
-    fprintf(output1, "%f\t%f\n", t, y[1]);
-  }
- 
-  fclose(output);
-  fclose(output1);
- 
-  pipe = popen("gnuplot -persist","w");
-  //fprintf(pipe,"set term png enhanced font \"v:/fireflysung.ttf\" 18 \n");
-  fprintf(pipe,"set term png enhanced font \"y:/wqy-microhei.ttc\" 18 \n");
-  //fprintf(pipe,"set yrange [68:70]\n");
-  fprintf(pipe,"set output \"test.png\"\n");
-  fprintf(pipe, "plot \"osc.dat\" title \"位移\" with lines, \"osc1.dat\" title \"速度\" with lines\n");
-  fprintf(pipe,"quit\n");
-
-  fprintf(pipe,"quit\n");
-  pclose(pipe);
-}
- 
-void runge4(double x, double y[], double step){
- 
-  double h=step/2.0, /* the midpoint */
-  t1[N], t2[N], t3[N], /* temporary storage arrays */
-  k1[N], k2[N], k3[N],k4[N]; /* for Runge-Kutta */
-  int i;
- 
-  for (i=0;i&lt;N;i++){
- 
-    t1[i]=y[i]+0.5*(k1[i]=step*f(x,y,i));
-  }
- 
-  for (i=0;i&lt;N;i++){
- 
-    t2[i]=y[i]+0.5*(k2[i]=step*f(x+h, t1, i));
-  }
- 
-  for (i=0;i&lt;N;i++){
- 
-    t3[i]=y[i]+ (k3[i]=step*f(x+h, t2, i));
-  }
- 
-  for (i=0;i&lt;N;i++){
- 
-    k4[i]= step*f(x+step, t3, i);
-  }
- 
-  for (i=0;i&lt;N;i++){
- 
-    y[i]+=(k1[i]+2*k2[i]+2*k3[i]+k4[i])/6.0;
-  }
-}
- 
-double f(double x, double y[], int i){
- 
-  if (i==0)
-    x=y[1]; /* derivative of first equation */
-  if (i==1)
-    x=-y[0]-0.5*y[1];
-  return x;
-}</pre>
+<p></p><h1>期中課程內容</h1>
+<p>操作影片課程內容整理</p>
+<h5>協同產品設計實習-AG6</h5>
+<p>課程初衷<span>「將技術放在學生體驗的最前沿」</span></p>
+<p>課程起源：<a href="https://2019wcm.blogspot.com/2019/01/blog-post.html">https://2019wcm.blogspot.com/2019/01/blog-post.html</a></p>
+<h2>組員名單</h2>
+<p>組長:仝允丞 40623150</p>
+<p>組員:簡稜雅 40623107</p>
+<p><span>組員:廖彥霖 40623147</span></p>
+<p><span>組員:黃盟泰 40623137</span></p>
+<p><span>組員:黃子軒 40623136</span></p>
+<p><span>組員:陳霖      40623155</span></p>
+<p><span>組員:林國蓁 </span>40423122</p>
+<p><span>組員:蔡憲佳 </span>40423249</p>
+<p>BLOGGER:<a href="https://mde2019ag6.blogspot.com/">https://mde2019ag6.blogspot.com/</a></p>
+<h2>建立隨身系統</h2>
+<p><span>藉由隨身系統，以了解隨身系統(P37)運作方式，</span></p>
+<p><span>學習系統的操作使用與設定，打造所需的隨身系統環境</span><span>。</span></p>
+<h3>新增資料夾</h3>
+<p><span>建立一個資料夾</span></p>
+<p><span>已用後續創建data資料夾來連結Y槽內容</span></p>
+<h3>SciTE使用</h3>
+<p>安裝SciTE檔案至剛才所創立的data資料夾中</p>
+<p><span>使用windos的</span><span> </span><span>full download版本</span></p>
+<p>下載 SciTE程式：:<a href="https://www.scintilla.org/SciTEDownload.html">https://www.scintilla.org/SciTEDownload.html</a></p>
+<p>開啟SciTE&gt;設定檔案內容</p>
+<p><img alt="" height="593" src="/images/31801.png" width="710"/></p>
+<p><span>使用Ctr+F找到"code.page"並改為下圖所示</span></p>
+<p><span><img alt="" height="344" src="/images/31802.png" width="398"/></span></p>
+<p><span></span></p>
+<h3>安裝Python入可攜系統</h3>
+<p><span>1.安裝時點選自定義安裝<img alt="" height="291" src="/images/31803.png" width="467"/></span></p>
+<p><span></span></p>
+<p><span>2.勾取所需功能選擇</span></p>
+<p><span><img alt="" height="331" src="/images/31804.png" width="451"/></span></p>
+<p><span>3.設定安裝路徑</span></p>
+<p><span><img alt="" height="328" src="/images/31805.png" width="485"/></span></p>
+<p><span>4.</span>利用"<strong><a href="https://mh-nexus.de/en/hxd/">HxD</a>二位元編輯器軟體</strong>"</p>
+<p>設定 &gt; <strong><span style="color: #ff0000;">C:\p37\Scripts\pip.exe</span></strong></p>
+<p>使用<span style="color: #000000;">Ctr+F</span>功能找尋<strong><span style="color: #ff0000;">C：</span></strong><span><strong><span style="color: #ff0000;">\p37</span></strong>並改為<strong><span style="color: #ff0000;">Y：\p37\</span></strong></span></p>
+<p><span style="color: #000000;">如下圖紅字處</span></p>
+<p><span style="color: #000000;"><img alt="" height="450" src="/images/31806-1.png" width="773"/></span></p>
+<p><span style="color: #000000;"><span>更改完成後將p37資料移至data資料夾</span></span></p>
+<h3>start.bat製作</h3>
+<p><span>利用安裝的<strong>SciTE</strong>製作<strong>start.bat</strong>檔案</span></p>
+<p><img alt="" height="466" src="/images/31807.png" width="819"/></p>
+<h3>stop.bat製作</h3>
+<p>同<a href="/get_page/start.bat%E8%A3%BD%E4%BD%9C">start.bat製作</a></p>
+<p><span>利用安裝的<strong>SciTE</strong>製作<strong>stop.bat</strong>檔案</span></p>
+<p><span><img alt="" height="284" src="/images/31808.png" width="469"/></span></p>
+<h3>差異比對</h3>
+<p><span>在製作過程中想要快速了解兩個檔案之間的差異，<br/>可以使用<strong>Kdiff3</strong>程式來快速比對出不一樣的地方。</span></p>
+<h2>導入ungit</h2>
+<p>1.<span>下載 </span><a href="https://drive.google.com/file/d/1Cw8mHRcHKIZj7K7_m6x_af4vzo89539a/view?usp=sharing">kmol_2019.7z</a><span>, 接著再下載<span> </span></span><a href="https://drive.google.com/file/d/1G3cEZsw6d7NjqLLgu9jljVNBd6wF-ZrG/view?usp=sharing">nodejs_with_ungit.7z</a> ：</p>
+<p><img alt="" height="788" src="/images/chrome_CiE4XceirB.png" width="621"/></p>
+<p>圖片來源：<a href="http://mde.tw/wcm2019/content/%E5%AF%A6%E7%BF%92%E9%A0%85%E7%9B%AE%E4%BA%8C.html">點此觀看</a><a href="http://mde.tw/wcm2019/content/%E5%AF%A6%E7%BF%92%E9%A0%85%E7%9B%AE%E4%BA%8C.html"></a></p>
+<p>2.<span>將 nodejs 放入 kmol_2019 的 data 目錄中：</span></p>
+<p><img alt="" height="757" src="/images/explorer_rXwsVgZlAV.png" width="332"/></p>
+<p>3.<span>設定啟動 start.bat 中的 ungit 命列列搜尋路徑(start_cadlab.bat同樣)：</span></p>
+<p><span>路徑指令：set path8=%Disk%:\nodejs;%Disk%:\nodejs\appdata\roaming\npm;</span></p>
+<p><span><img alt="" height="248" src="/images/Sc1_8dZlE8WnEn.png" width="612"/></span></p>
+<p>*此在"SciTE"程式編撰</p>
+<p><img alt="" height="432" src="/images/Sc1_1SUkYxdNjn.png" width="379"/></p>
+<p>4.<span>將 path8 納入 path 設定：</span></p>
+<p><img alt="" height="33" src="/images/Sc1_ohecqNfwdZ.png" width="1343"/></p>
+<p>5.<span>設定 USERPROFILE 環境變數</span></p>
+<p>路徑指令：<span>set USERPROFILE=%Disk%:\home</span></p>
+<p><img alt="" height="80" src="/images/Sc1_VjB4AfDFK2.png" width="304"/></p>
+<p>6.關閉重啟查看是否ungit指令可否使用：</p>
+<p><img alt="" height="882" src="/images/chrome_74HCgt73da.png" width="1920"/></p>
+<p>導入影片：<a href="https://www.youtube.com/watch?v=lB-spECfhr8">https://www.youtube.com/watch?v=lB-spECfhr8</a></p>
+<p>詳細步驟網頁：<a href="https://2019wcm.blogspot.com/2019/03/ungit.html">https://2019wcm.blogspot.com/2019/03/ungit.html</a></p>
 <p></p>
-<h3>Lua 程式碼</h3>
-<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">-- 導入 js 模組
-js = require("js")
--- 取得 window
-window = js.global
--- 猜小於或等於 n 的整數
-big = 100
--- 計算猜測次數, 配合 while 至少會猜一次
-num = 1
--- 利用 window:prompt 方法回應取得使用者所猜的整數
-guess = window:prompt("請猜一個介於 1 到 "..big.." 的整數")
--- 利用數學模組的 random 函數以亂數產生答案
-answer = math.random(big)
-output = ""
--- 若沒猜對, 一直猜到對為止
-while answer ~= tonumber(guess) do
-    if answer &gt; tonumber(guess) then
-        output = "猜第 "..num.." 次, guess="..guess..", answer="..answer.." - too small"
-        print(output)
-    else
-        output = "猜第 "..num.." 次, guess="..guess..", answer="..answer.." - too big"
-        print(output)
-    end 
-    guess = window:prompt(output..", 請猜一個介於 1 到 "..big.." 的整數")
-    num = num + 1
-end
-print("總共猜了 "..num.." 次, answer=guess="..answer.." - correct")
-    </pre>
 <p></p>
-<h3>Javascript 程式碼</h3>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">STLViewer = function(stlpath, plotarea) {
-
-	var mycanvas = document.getElementById(plotarea);
-	var viewer = new JSC3D.Viewer(mycanvas)
-	var theScene = new JSC3D.Scene;
-	////Initialize with a default file:
-	//var stlpath = "../../../assets/2013-10-23/stl/box.STL"
-	//var stlpath = "../../../assets/2013-10-23/stl/taj.stl"
-	viewer.setParameter('SceneUrl', stlpath);
-    viewer.setParameter('InitRotationX', 20);
-	viewer.setParameter('InitRotationY', 20);
-	viewer.setParameter('InitRotationZ', 0);
-	viewer.setParameter('ModelColor', '#CAA618');
-	viewer.setParameter('BackgroundColor1', '#FFFFFF');
-	viewer.setParameter('BackgroundColor2', '#383840');
-	viewer.init();
-	viewer.update();
-	////init done
-	var canvas_drop = document.getElementById('canvas-drop')
-	/*var dropzone = document.getElementById('dropzone')
-	dropzone.addEventListener('dragover', handleDragOver, false);
-	dropzone.addEventListener('drop', handleFileSelect, false); */
-	canvas_drop.addEventListener('dragover', handleDragOver, false);
-	canvas_drop.addEventListener('drop', handleFileSelect, false);
-
-////Drag and drop logic:
-	function handleFileSelect(evt) {
-	    evt.stopPropagation();
-	    evt.preventDefault();
-	    var files = evt.dataTransfer.files;
-	    console.log(evt)
-	    console.log(files)
-	    preview_stl(files[0])
-	  }
-
-	  function handleDragOver(evt) {
-	    evt.stopPropagation();
-	    evt.preventDefault();
-	    evt.dataTransfer.dropEffect = 'copy';
-	  }
-
-////jsc3d logic
-	var handle_file_select = function(e) {
-		e.stopPropagation()
-		e.preventDefault()
-		var f = e.target.files[0]
-		preview_stl(f)
-	}
-
-	function preview_stl(f) {
-		var reader = new FileReader()
-		var ext = f.name.split(".")[1]
-
-		function setup_viewer() {
-			viewer.setParameter('InitRotationX', 20);
-			viewer.setParameter('InitRotationY', 20);
-			viewer.setParameter('InitRotationZ', 0);
-			viewer.setParameter('ModelColor', '#CAA618');
-			viewer.setParameter('BackgroundColor1', '#FFFFFF');
-			viewer.setParameter('BackgroundColor2', '#383840');
-			viewer.setParameter('RenderMode', "flat");
-		}
-		setup_viewer()
-
-		reader.onload = (function(file) {
-			return function(e) {
-				theScene = new JSC3D.Scene
-		    	stl_loader = new JSC3D.StlLoader()
-		    	stl_loader.parseStl(theScene, e.target.result)
-		      	//viewer.init()
-		      	viewer.replaceScene(theScene)
-		      	viewer.update()
-		      	console.log("file reader onload")
-			}
-		})(f)
-
-		if (ext.toLowerCase() != "stl") {
-			alert("That doesn't appear to be an STL file.");
-		} else {
-			reader.readAsBinaryString(f)
-		}
-	}
-}
-</pre>
+<p>-------------------------------------------------------------------------------------------------------------</p>
+<p>*首推時發現錯誤bug，問題如下：</p>
+<p><img alt="" height="183" src="/images/cmd_8nG07EiBtu.png" width="657"/></p>
+<p>查詢錯誤後發現是有一個檔案名叫"index.lock"去擋到上學期所學的版本推法。</p>
+<p>2019.03.11解決辦法：</p>
+<p>移除"Y:\tmp\ag6\.git"內的<g class="gr_ gr_68 gr-alert gr_gramm gr_inline_cards gr_run_anim Style replaceWithoutSep" data-gr-id="68" id="68">"</g><span><g class="gr_ gr_68 gr-alert gr_gramm gr_inline_cards gr_disable_anim_appear Style replaceWithoutSep" data-gr-id="68" id="68">index</g>.lock"檔</span></p>
+<p><span><img alt="" height="476" src="/images/explorer_1B9GiRvPFk.png" width="332"/></span></p>
+<p><span>但不知道此阻擋的檔案是否是為了讓我們利用ungit去推送、編輯網頁，此有待下次上課詢問老師，但當下解決辦法便為移除此檔。</span></p>
+<p><span>參考網址：<a href="https://www.cnblogs.com/renkangke/archive/2013/05/08/3067462.html">請點此</a></span></p>
+<h2>可攜程式懶人包</h2>
+<p>課堂上老師釋出可攜系統懶人包於課程網站</p>
+<p>課程網站連結：<a href="https://2019wcm.blogspot.com/">https://2019wcm.blogspot.com/</a></p>
+<p>懶人包版可攜系統：<a href="https://drive.google.com/file/d/1_TQBw1PM7jxrmtsBjvLKbjJWfGs8Ug79/view">請點此</a></p>
+<h2>Portable Python</h2>
+<p><span dir="ltr">進入<a href="http://mde.tw/#/">mde.tw</a>，進入<a href="https://2019wcm.blogspot.com/">2019 網際內容管理課程示範網</a></span><a href="https://2019wcm.blogspot.com/">誌</a>，點入<a href="https://2019wcm.blogspot.com/search/label/portable%20python">portable python</a></p>
+<p>開始進入本次的編輯教學網頁：</p>
+<p><img alt="" height="913" src="/images/chrome_5Lj2vWEcw8.png" width="610"/></p>
+<p>-------------------------------------------------------------------------------------------------------------</p>
+<p>使用</p>
+<p><span>git config --edit --system</span></p>
+<p>跳出此畫面</p>
+<p><img alt="" height="497" src="/images/cmd_n4svqn30e8.png" width="927"/></p>
+<p>往下移動，使用按鍵"J"到最底下</p>
+<p><img alt="" height="512" src="/images/cmd_VdJUU1k1F8.png" width="979"/></p>
+<p>連按兩次d鍵，刪除此行</p>
+<p>接著按下Esc &gt; <g class="gr_ gr_73 gr-alert gr_gramm gr_inline_cards gr_run_anim Style multiReplace" data-gr-id="73" id="73">輸入 :</g><g class="gr_ gr_71 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling" data-gr-id="71" id="71">wq</g>   (儲存剛剛所刪之動作)</p>
+<p>接著於Y:tmp下輸入"sh"會跑出下圖：</p>
+<p><img alt="" height="79" src="/images/cmd_B048LV8VeE.png" width="248"/></p>
+<p>接著於scite貼上</p>
+<p><span>ssh-keygen -t <g class="gr_ gr_69 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" data-gr-id="69" id="69">rsa</g> -b 4096 -C "This is my key"</span></p>
+<p><span>修改<g class="gr_ gr_70 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-del replaceWithoutSep" data-gr-id="70" id="70">""</g>內註解</span></p>
+<p><span><img alt="" height="176" src="/images/SciTE_9kkeDEjFVd.png" width="354"/></span></p>
+<p>修改後貼上</p>
+<p><img alt="" height="110" src="/images/cmd_ty7MP29dBW.png" width="490"/></p>
+<p>查看y:home底下是否有.ssh資料夾</p>
+<p>若沒有就使用</p>
+<p><g class="gr_ gr_67 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling" data-gr-id="67" id="67">mkdir</g> .ssh</p>
+<p>以用來建立資料夾</p>
+<p><img alt="" height="274" src="/images/chrome_M4tTDLxIDc.png" width="309"/></p>
+<p>接著就持續Enter以建立key</p>
+<p><img alt="" height="412" src="/images/cmd_RIPiWrtS3j.png" width="493"/></p>
+<p>後續到</p>
+<p>Y:\home\.ssh</p>
+<p><span>查看是否有無建立成功</span></p>
+<p><span><img alt="" height="199" src="/images/explorer_OO2AsJ166Y.png" width="606"/><br/></span></p>
+<p><span></span>使用scite打開"id_rsa.pub"，把內容key複製起來</p>
+<p>開啟github&gt;登入個人帳號&gt;setting&gt;SSH and GPG keys&gt;新增KEY</p>
+<p><img alt="" height="160" src="/images/chrome_sDtNQH8gvM.png" width="769"/></p>
+<p>接著輸入下圖步驟：</p>
+<p><img alt="" height="703" src="/images/chrome_Wpib05uwrg.png" width="1457"/></p>
+<p>完成後會出現</p>
+<p><img alt="" height="296" src="/images/chrome_4iRdh69e3S.png" width="770"/></p>
+<p>教師示範影片</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/t4PslV5Abjs" width="560"></iframe></p>
+<h2>網路故障排除</h2>
+<p>遇到學校伺服器IP掛掉問題<br/>Step1.關閉網路第四版協定</p>
+<p><img alt="" height="708" src="/images/SfF6oN78hU.png" width="1244"/><img alt="" height="708" src="/images/SfF6oN78hU.png" width="1244"/></p>
+<p>打開IPV6</p>
+<p>修改內容設定，打開DNS並輸入</p>
+<p>2001:b000:168::1</p>
+<p><img alt="" height="518" src="/images/dllhost_QcMKXfshAM.png" width="630"/><img alt="" height="518" src="/images/dllhost_QcMKXfshAM.png" width="630"/></p>
+<p>修改proxy內容</p>
+<p>[2001:288:6004:17::4]</p>
+<p><img alt="" height="386" src="/images/rundll32_9PmorqmYBC.png" width="443"/><img alt="" height="386" src="/images/rundll32_9PmorqmYBC.png" width="443"/></p>
+<p>完成修改後便能上網</p>
+<h2>個人作業</h2>
+<h4><br/>自製可攜程式系統<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/oBdlFq34Rl4" width="560"></iframe></h4>
+<h4>Vrep BubbleRob製作及模擬過程</h4>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/gP5Nzxq1zYg" width="560"></iframe></p>
+<p><a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g6/blob/gh-pages/vrep%E6%AA%94%E6%A1%88/40623107.ttt">bubbleRob檔案</a></p>
+<h2>問題與討論</h2>
+<h2>Git手冊</h2>
+<h3>電子書</h3>
+<p><a href="/downloads/progit_v2.1.0.pdf">Git pdf手冊</a></p>
+<p>線上觀看手冊</p>
+<p><a href="https://git-scm.com/book/zh-tw/v2">https://git-scm.com/book/zh-tw/v2</a></p>
+<h3>手冊重點</h3>
+<h4>開始</h4>
+<h4>版本控制系統</h4>
+<p><img alt="" height="683" src="/images/p01.png" width="800"/></p>
+<p>利用RCS指令可控制任一版本資料，其<span>工作原理是在硬碟上保存一堆特殊格式的補丁集合，通過套用功能，便可以重新產生出每個版本的檔案內容。</span></p>
+<p><span>Git控制方法分成</span><span>集中化與分散式版本控制系統</span></p>
+<p><span>集中化版本控制系統</span></p>
+<p><span><img alt="" height="556" src="/images/p02.png" width="800"/></span></p>
+<p>好處：</p>
+<p>1.清楚了解分組內各成員所做進度<br/>2.管理員統一控制所有開發者權限<br/>3.各用戶端統一使用統一版本系統，好管理<br/>壞處：<br/>1.中央伺服器發生故障，各開發者便無法協同合作<br/>2.統一集中資料會有遺失資料風險</p>
+<p>分散式版本控制系統<br/><br/>因集中化控制的不便，進而衍化出分散式控制系統</p>
+<p><img alt="" height="800" src="/images/p03.png" width="668"/><br/>優點：<br/>1.任一協同伺服器故障，事後都能以任一用戶端鏡像還原<br/>2.能與許多遠端倉儲互動，使不同地方群組能在不一樣的地方完成同一專案協同合作<br/>3.階層式的分工合作<br/><br/></p>
+<p>-------------------------------------------------------------------------------------------------------------</p>
+<p><strong>Git完整性</strong></p>
+<p><br/><span>1.Git 中所有的物件在儲存前都會被計算校驗碼（checksum）並以校驗碼參照物件。</span><br/>2.計算較驗碼<span>機制稱為 SHA-1 雜湊演算法。 一個校驗碼是由 40 個 16 進位的字母（0–9 和 a–f）所組成，Git 會根據檔案的內容和資料夾的結構來計算。 <br/>3. Git 的資料庫內，每個檔案都是用其內容的校驗碼來儲存，而不是使用檔名。</span></p>
+<p><strong>Git狀態</strong></p>
+<p>1.已提交（committed）：<br/><span>檔案己安全地存在你的本地端資料庫。</span></p>
+<p>2.<span>已修改（modified）：<br/>檔案已被修改但尚未提交到本地端資料庫。 <br/></span></p>
+<p>3.<span>已預存（staged）：<br/>已預存代表這檔案將會被存到下次你提交的快照中。<br/><br/></span></p>
+<p><span><img alt="" height="441" src="/images/p04.png" width="800"/></span></p>
+<p><strong>Git工作流程</strong></p>
+<p>1.你在你工作目錄修改檔案。</p>
+<p>2.預存檔案，將檔案的快照新增到預存區。</p>
+<p>3.做提交的動作，這會讓存在預存區的檔案快照永久地儲存在 Git 目錄中。</p>
+<h4>Git基礎</h4>
+<p><strong>取得倉儲</strong></p>
+<p>命令格式：<span>git clone [url]<br/>1.<code>https://</code><span><br/>2.git://<br/>3.user@server:path/to/repo.git<br/><br/></span></span></p>
+<p><strong>檢查檔案狀態</strong></p>
+<p><span>命令格式：git status<br/>用來偵測哪些檔案處在什麼樣的狀態下的主要工具</span></p>
+<p><span>使用<code>git status -s</code><span><span> </span>或<span> </span></span><code>git status --short會得到一種較精簡的修改</code><br/><br/><strong>新增檔案</strong></span></p>
+<p><strong></strong>命令格式：<span>git add.<br/>用以追蹤新的檔案、預存檔案使用</span></p>
+<p><strong>提交修改</strong></p>
+<p>命令格式：git commit</p>
+<div class="paragraph">預備提交本次變更使用<br/><br/></div>
+<div class="paragraph"></div>
+<div class="paragraph"><strong>移除檔案</strong></div>
+<div class="paragraph"><strong></strong></div>
+<div class="paragraph">命令格式：<span>git rm</span></div>
+<div class="paragraph"><span>從預存區中移除已追蹤檔案<br/><br/></span></div>
+<div class="paragraph"><span></span></div>
+<div class="paragraph"><strong>變更檔案</strong></div>
+<div class="paragraph"></div>
+<div class="paragraph"></div>
+<div class="paragraph">命令格式：git mv file_from file_to
+<div class="paragraph">於<span> Git 中重新命名一個檔案<br/><br/></span></div>
+</div>
+<div class="paragraph"></div>
+<div class="paragraph"><strong>復原檔案</strong></div>
+<div class="paragraph"><strong></strong></div>
+<div class="paragraph">命令格式：git commit --amend</div>
+<div class="paragraph">復原上一個提交內容<br/><br/></div>
+<div class="paragraph"></div>
+<div class="paragraph"><strong>推送檔案</strong></div>
+<div class="paragraph"></div>
+<div class="paragraph">命令格式：git push</div>
+<div class="paragraph">完成近端內容，推回上游</div>
+<div class="paragraph"></div>
+<div class="paragraph"></div>
+<div class="paragraph"><strong>新增別名</strong></div>
+<div class="paragraph"></div>
+<div class="paragraph">命令格式：git config</div>
+<div class="paragraph"><span>替指令設定別名</span></div>
+<div class="paragraph"><span></span></div>
+<div class="paragraph"><span></span></div>
+<div class="paragraph"><strong>標籤</strong></div>
+<div class="paragraph"></div>
+<div class="paragraph">命令格式：git tag</div>
+<div class="paragraph"><span>用此功能來標出發行版本</span></div>
+<div class="paragraph"><span></span></div>
+<div class="paragraph"><strong>檢視遠端</strong></div>
+<div class="paragraph"><strong></strong></div>
+<div class="paragraph">命令格式：git remote</div>
+<div class="paragraph"><span>檢視已設定的遠端版本庫， 列出每個遠端版本庫的「簡稱」</span></div>
+<div class="paragraph"></div>
+<h4>使用Git分支</h4>
+<p>用於</p>
+<ol class="arabic">
+<li>
+<p>開發一個網站。</p>
+</li>
+<li>
+<p>建立一個分支以實現一個新故事。</p>
+</li>
+<li>
+<p>在這個分支上進行開發。</p>
+</li>
+</ol>
+<p><span>用於分支（branch）與合併（merge）工作流程</span></p>
+<p><span></span><strong>建立分支</strong></p>
+<p>使用指令：<span>git branch</span></p>
+<p>此會在<span>目前提交上新建一個指標</span></p>
+<p><img alt="" height="331" src="/images/p05.png" width="800"/></p>
+<p><strong>切換分支</strong></p>
 <p></p>
-<h3>Html 原始碼</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;html&gt;
-   &lt;head&gt;
-      &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-      &lt;title&gt;CMSimfly&lt;/title&gt;
-      &lt;link rel="stylesheet" type="text/css" href="/static/cmsimply.css"&gt;
-   &lt;/head&gt;
-   &lt;body&gt;
-      &lt;div class='container'&gt;
-      &lt;nav&gt;
-         &lt;ul id='css3menu1' class='topmenu'&gt;
-            &lt;li&gt;&lt;a href='/get_page/簡介'&gt;簡介&lt;/a&gt;
-            &lt;li&gt;&lt;a href='/get_page/目錄結構'&gt;目錄結構&lt;/a&gt;
-            &lt;li&gt;
-               &lt;a href='/get_page/頁面編輯'&gt;頁面編輯&lt;/a&gt;
-               &lt;ul&gt;
-                  &lt;li&gt;
-                     &lt;a href='/get_page/插入程式碼'&gt;插入程式碼&lt;/a&gt;
-                     &lt;ul&gt;
-                        &lt;li&gt;&lt;a href='/get_page/Java 程式碼'&gt;Java 程式碼&lt;/a&gt;
-                        &lt;li&gt;&lt;a href='/get_page/Python 程式碼'&gt;Python 程式碼&lt;/a&gt;
-                        &lt;li&gt;&lt;a href='/get_page/C或C++程式碼'&gt;C或C++程式碼&lt;/a&gt;
-                        &lt;li&gt;&lt;a href='/get_page/Lua 程式碼'&gt;Lua 程式碼&lt;/a&gt;
-                        &lt;li&gt;&lt;a href='/get_page/Javascript 程式碼'&gt;Javascript 程式碼&lt;/a&gt;
-                        &lt;li&gt;&lt;a href='/get_page/Html 原始碼'&gt;Html 原始碼&lt;/a&gt;&lt;/li&gt;
-                        &lt;/li&gt;
-                     &lt;/ul&gt;
-               &lt;/ul&gt;
-            &lt;li&gt;&lt;a href='/get_page/網際簡報'&gt;網際簡報&lt;/a&gt;
-            &lt;li&gt;&lt;a href='/get_page/網誌編輯'&gt;網誌編輯&lt;/a&gt;
-            &lt;li&gt;&lt;a href='/get_page/已知錯誤'&gt;已知錯誤&lt;/a&gt;&lt;/li&gt;
-         &lt;/ul&gt;
-      &lt;/nav&gt;
-      &lt;section&gt;
-         &lt;form method='post' action='/ssavePage'&gt;
-         &lt;textarea class='simply-editor' name='page_content' cols='50' rows='15'&gt;&lt;h3&gt;Html 原始碼&lt;/h3&gt;&lt;/textarea&gt;
-         &lt;input type='hidden' name='page_order' value='9'&gt;
-         &lt;input type='submit' value='save'&gt;
-         &lt;input type=button onClick="location.href='/get_page/Html 原始碼'" value='viewpage'&gt;
-         &lt;/form&gt;
-      &lt;/section&gt;
-   &lt;/body&gt;
-&lt;/html&gt;
-COPY TO CLIPBOARD	</pre>
+<p>使用指令：<span>git checkout</span></p>
+<p><span>切換到一個已經存在的分支</span></p>
+<p><span><img alt="" height="460" src="/images/p06.png" width="800"/></span></p>
+<p><strong>分支歷史</strong></p>
 <p></p>
-<h1>網際簡報</h1>
-<p>CMSimfly 中採用 <a href="https://revealjs.com/#/">Reveal.js</a> 作為網際簡報, 其中的維護檔案位於 config/reveal.js, 而對應的簡報檔案則位於 reveal 目錄中.</p>
-<h1>網誌編輯</h1>
-<p>CMSimfly 採用 <a href="https://blog.getpelican.com/">Pelican blog</a> 系統, 編輯檔案位於 config/pelican.leo, 對應的</p>
-<p> Markdown 原始檔案位於 markdown 目錄中, 而經 Pelican 轉換出的網誌超文件檔案則位於 blog 目錄中.</p>
-<p>執行 Pelican 之前, 必須先安裝下列模組:</p>
-<p style="padding-left: 30px;">pip install pelican Markdown</p>
-<p>其餘在網誌文章中所需要的 Javascript 或 Brython 程式檔案, 則與 CMSimfly 及 Reveal.js 共用, 位於 static 目錄下.</p>
-<p>上傳檔案與圖檔的引用則與 CMSimfly 架構相同.</p>
-<h1>已知錯誤</h1>
-<p>插入圖檔連結</p>
-<p><img alt="" height="460" src="http://cpgx.kmol.info/wcm2019/images/web_developer_2019_intro.png" width="1149"/></p>
-<h4>全部頁面會因無法正確解讀而誤刪</h4>
-<p>在特定情況下, 系統會誤刪 config/content.htm 檔案, 目前在單頁或全部頁面編輯存檔之前, 或將上一版本的 content.htm 存入 content_back.htm, 若 content.htm 內容被程式誤刪, 可以利用備份檔案複製回原始內容後, 再進行後續處理.</p>
-<h4>頁面標題不支援特殊符號</h4>
-<p>各頁面標題目前不支援特殊符號, 例如: "/", "?" 等, 若已經發生程式無法解讀頁面的情況, 只能從編輯 config/content.htm 下手, 若系統位於遠端, 則後續必須要再設法提供一個額外的編輯 config/content.htm 檔案的網際連結功能.</p>
-<h4>Video 引用不支援內部引用</h4>
-<p>tinymce 中插入 video 的小視窗, 要移除引用的圖像與連結, 因為一般建議不要在內容中存入 .mp4 的影片資料, 而只接受引入影片 URL 連結.</p>
+<p>使用指令：<span>git log</span></p>
+<p><span>查出提交歷史，顯示分支指標所在與歷史如何被分離開來。</span></p>
+<p></p>
+<p></p>
+<h4>伺服器上的Git</h4>
+<p><strong>通訊協定種類：</strong></p>
+<div><strong>Local protocols</strong><br/><span></span></div>
+<p></p>
+<div>
+<p><span>優點：</span></p>
+<p><span>1.可將倉儲副本傳送到各開發者具共享權限的位置，<br/>並同於設置其他共享目錄一樣設置存取、編輯的權限。</span></p>
+<p><span>2.運用git指令</span><span>，使共同開發者更方便推送到遠端，同時也方便存取使用。</span></p>
+<p><span>缺點:</span></p>
+<p><span>1.共享存取通常更難以從多個位置進行設定和存取。</span></p>
+<p><span>2.若使用個人電腦的話，則需安裝遠端系統，否則會連基本網路存取都還要來得困難與慢上許多。</span></p>
+<p><span>3.每個共同編寫者都具有對“遠端”目錄的訪問權限，無法限制或阻擋使用者更改或刪除內部Git文件或破壞遠端倉儲。</span></p>
+<p><strong>SSH通訊協定(<span>Secure Shell</span>)</strong></p>
+<p>優點:</p>
+<p>1.SSH相較容易設置，且保護程式較多。</p>
+<p>2.透過SSH存取資安是安全的，所有數據傳輸都經過加密和身份驗證。</p>
+<p>3.像HTTP/S、Git與Local protocols一樣，讓數據在傳輸前盡量接近。</p>
+<p>缺點:</p>
+<p>1.無法通過它對倉儲進行匿名存取。</p>
+<p>2.如果想允許匿名存取並且仍使用SSH，則需設定SSH以利推送，但其內容可能會被其他人獲取。</p>
+<p><strong>Git協定</strong></p>
+<p>優點:</p>
+<p>1.目前最快的網絡傳輸協議。</p>
+<p>2.若為共同倉儲或為不需身份驗證進行讀取，則需設定Git保護程式。</p>
+<p>3.Git倉儲可供所有人clone。</p>
+<p>缺點:</p>
+<p>1.缺乏身份驗證。</p>
+<p>2.通常為唯一存取權限(即推送、寫入等)，若開啟推送存取權限，則擁有此URL的任何人都可推送到倉儲內。</p>
+<p><strong>HTTP</strong></p>
+<p>可分為兩種，分別為新制與舊制。</p>
+<p>新制:</p>
+<p>與SSH或Git協定的運行方式非常相似，它可以設置為像git://協議一樣匿名服務，也可以通過SSH協議等身份驗證和加密來推送。</p>
+<p>舊制:</p>
+<p>直接將Git倉儲提供設置為來自Web服務器的普通文件。優點於設置的簡單性。但此外，任何皆可訪問倉儲Web服務器的人都可以存取此倉儲。</p>
+<p>以下優缺點於新制HTTP</p>
+<p>優點:</p>
+<p>1.能夠使用用戶名和密碼進行身份驗證。</p>
+<p>2.通過HTTPS以讀取方式提供倉儲。</p>
+<p>缺點:</p>
+<p>與某些服務器上的SSH相比，在HTTP/S上使用Git可能會有點棘手。</p>
+<p><span></span>--------------------------------------------------------------------------------------------</p>
+<p><strong>在伺服器上佈署Git：</strong></p>
+<p><span>要clone倉儲以新增倉儲，使用該--bare選項運行clone命令。將指令尾端輸入.git。</span></p>
+<div>使用指令：<span> git clone --bare my_project my_project.git</span></div>
+<div></div>
+<div>使用後<span>在目錄中會有Git目錄數據的副本my_project.git。</span></div>
+<div><span></span></div>
+<div><span>以下指令等同於上述指令，但文件部分會存在些許細微差別。<br/><br/></span></div>
+<div><span>使用指令：cp -Rf my_project/.git my_project.git</span></div>
+<div><span></span></div>
+<div><span>將倉儲複製到下來設置新的倉儲：<br/><br/></span></div>
+<div><span>假設/srv/git存在於該服務器上，並已設置一個名為git.example.com的SSH服務器，而希望將所有Git存儲庫存儲在該/srv/git目錄下。</span></div>
+<div><span></span></div>
+<div>使用指令：scp -r my_project.git <a href="mailto:user@git.example.com:/srv/git">user@git.example.com:/srv/git</a></div>
+<div></div>
+<div>接著對有這目錄及SSH的權限的用戶便可以clone，也有推送訪問權限。</div>
+<div></div>
+<div>使用指令：<span>git clone user@git.example.com:/srv/git/my_project.git</span></div>
+<div></div>
+<div><span>如果git init使用該--shared選項執行命令，Git將自動將寫入權限正確添加到倉儲。</span></div>
+<div><span></span></div>
+<div><span>使用指令：<br/><br/></span></div>
+<div>ssh <a href="mailto:user@git.example.com">user@git.example.com</a></div>
+<div><br/><span>cd /srv/git/my_project.git</span></div>
+<div><br/><span>git init --bare --shared</span></div>
+<div><span></span></div>
+<div><span>-----------------------------------------------------------------------------------------------------------</span></div>
+<div><strong>個人的SSH公鑰：</strong></div>
+<div><strong></strong></div>
+<div><span>輸入指令後有出現文件為id_dsa(id_rsa)為自己私人的密鑰，而文件後方多了.pub則為公鑰。</span></div>
+<div><span></span></div>
+<div><span><span>如下：<br/></span></span>
+<p><strong>~/.ssh為目錄</strong></p>
+<p> cd ~/.ssh</p>
+<p> ls</p>
+<p>authorized_keys2</p>
+<p>id_dsa</p>
+<p>known_hosts</p>
+<p>config</p>
+<p>id_dsa.pub</p>
+<p>*若無金<span>鑰時，可輸入下列指令來創建。</span></p>
+<p><span>指令：ssh-keygen</span></p>
+<p>接著會需要確保密鑰（.ssh/id_rsa）的位置，需輸入兩次密碼，不需要則可空白。</p>
+<p>如用戶需要複製有公鑰文件的內容，輸入下列指令。<br/><strong>~/.ssh/id_rsa為公鑰位置</strong></p>
+<p>cat ~/.ssh/id_rsa.pub</p>
+<p>-----------------------------------------------------------------------------------------------------</p>
+<p><strong>伺服器的設定：</strong></p>
+<p>如需設定SSH存取的服務端，則需使用下列方式來進行身分驗證。</p>
+<p>&lt;&lt;<span>git為用戶名、 .ssh為目錄、authorized_keys為驗證&gt;&gt;</span></p>
+<p><span>指令：</span></p>
+<p>sudo adduser git</p>
+<p>su git</p>
+<p>cd</p>
+<p>mkdir .ssh &amp;&amp; chmod 700 .ssh</p>
+<p>touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys</p>
+<p>如需要新增開發人員的SSH公鑰，並將其保存到臨時文件中。<br/>指令如下:</p>
+<p>&lt;&lt;範例為john為開發人員的SSH公鑰&gt;&gt;</p>
+<p>cat /tmp/id_rsa.john.pub</p>
+<p>在一個沒有工作目錄的情況下設置一個空儲存庫。</p>
+<p>cd /opt/git</p>
+<p>mkdir project.git</p>
+<p>cd project.git</p>
+<p>git init --bare</p>
+<p>將文件推送至遠端倉儲。</p>
+<p>&lt;&lt;myproject為文件&gt;&gt;</p>
+<p>-----------------------------------------------------------------------------------------</p>
+<p>Git常駐程式</p>
+<p>若不想將所有人都新增SSH金鑰時，以維護近端的方式運行下列指令:<br/>*此方法設定方便而快速，但因沒有密鑰的身分驗證，所以任何人都可以存取裡面的內容*</p>
+<p>git daemon --reuseaddr --base-path=/opt/git/ /opt/git/</p>
+<p><strong>--reuseaddr是允許服務器重新啟動而無需等待舊連接超時</strong></p>
+<p><strong>--base-path是允許人們克隆項目而不指定整個路徑</strong></p>
+<p>&gt;&gt;最後的路徑則需宣告Git維護程序在哪查找所要導出的倉儲&lt;&lt;</p>
+<p>若防火牆正執行，還需在正在設置它的資料夾上的檔案9418處打一個洞。<br/>但建議將此維護方法作為擁有倉儲的唯讀權限的用戶使用。</p>
+<p>在Ubuntu計算機上，您可以使用Upstart的腳本，並在文件中放入腳本。</p>
+<p>*文件為/etc/init/local-git-daemon.conf*</p>
+<p>腳本:</p>
+<p>start on startup</p>
+<p>stop on shutdown</p>
+<p>exec /usr/bin/git daemon \</p>
+<p>--user=git --group=git \</p>
+<p>--reuseaddr \</p>
+<p>--base-path=/opt/git/ \</p>
+<p>/opt/git/</p>
+<p>respawn</p>
+<p>要在不重新啟動的情況下運行計算機時</p>
+<p>initctl start local-git-daemon</p>
+<p>允許未驗證的用戶存取指定的倉儲。</p>
+<p>cd /path/to/project.git</p>
+<p>touch git-daemon-export-ok</p>
+</div>
+</div>
+<h4>分散式的Git</h4>
+<p><strong>分散式工作流程</strong></p>
+<p>分散式工作流程分為三種</p>
+<p>集中式工作流程、整合式管理員工作流程、企業型工作流程</p>
+<p><strong>集中式工作流程：</strong></p>
+<p>如前者有人推送，後者必須合併前者的版本，不然會無法推送至儲存庫，是因為避免前者的資料被覆蓋。</p>
+<p><strong>整合式管理員工作流程：</strong></p>
+<p>倉儲維護人=A、開發人員=B</p>
+<p>A推送到公共倉儲。</p>
+<p>B clone該倉儲並進行改動，並推上他們的版本。</p>
+<p>B向A發送一封電子郵件，要求A提取更改。</p>
+<p>A將B的repo添加為遠端，合併原先的資料，推送到主倉儲。</p>
+<p><strong>企業型工作流程：</strong></p>
+<p>老闆=A、副手=B、開發人員=C</p>
+<p>正常的C會在他們主題的分支上工作，並在重新定義他們在master上的工作。而master分支是獨裁者的分支。</p>
+<p>B將C的主題分支合併到B的master分支中。</p>
+<p>A將B的master分支合併到A的master分支中。</p>
+<p>A將他們推master送到倉儲，以便其他C可以對其進行重新定義。</p>
+<p>------------------------------------------------------------------------------------</p>
+<p><strong>分散式的Git-對專案進行貢獻</strong></p>
+<p><span>個人：進入分支後的歷史圖(示意圖)</span></p>
+<p><span><img alt="" height="376" src="/images/0414-1.png" width="800"/></span></p>
+<p><span>團體：整合分支圖(示意圖)</span></p>
+<p><span><img alt="" height="800" src="/images/0414-2.png" width="718"/></span></p>
+<p><br/><br/><br/></p>
+<h2>Ungit</h2>
+<h3>Open</h3>
+<p>輸入ungit</p>
+<p><img alt="" height="471" src="/images/cmd_UnWKo7meKd.png" width="1076"/></p>
+<p>開啟後頁面</p>
+<p><img alt="" height="882" src="/images/chrome_IIevddTr1e.png" width="1920"/></p>
+<h3>Commit&amp;Push</h3>
+<p>有任何更新，這邊會跳出此視窗，可以用來做COMMIT的動作</p>
+<p>在此更新commit可輸入中文，更能表達出想commit的東西</p>
+<p><img alt="" height="392" src="/images/chrome_YB0ysfHULr.png" width="1148"/></p>
+<p>在title裡輸入commit註解，接著按下<span>按下commit&amp;push</span></p>
+<p><img alt="" height="882" src="/images/chrome_H746dgsW6k.png" width="1920"/></p>
+<p>輸入github帳號密碼</p>
+<p><img alt="" height="882" src="/images/chrome_xNUjkSGkAI.png" width="1920"/></p>
+<p>輸入完後便推送完成</p>
+<p><img alt="" height="188" src="/images/chrome_FgvsQPyRWB.png" width="1273"/></p>
+<h2>期中報告</h2>
+<p><br/>40623107<br/><br/><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/RA-sDKBQKlI" width="560"></iframe></p>
