@@ -1,7 +1,8 @@
 <h1>簡介</h1>
 <h5>協同產品設計實習-40623150</h5>
 <p>課程起源：<a href="https://2019wcm.blogspot.com/2019/01/blog-post.html">https://2019wcm.blogspot.com/2019/01/blog-post.html</a></p>
-<p>倉儲:<a href="https://github.com/40623150/40623150">https://github.com/40623150/40623150</a></p><h1>期末課程內容</h1>
+<p>倉儲:<a href="https://github.com/40623150/40623150">https://github.com/40623150/40623150</a></p>
+<h1>期末課程內容</h1>
 <p><span>操作影片課程內容整理</span></p>
 <h2>onshape 協同操作</h2>
 <h3>零組件繪製</h3>
@@ -19,7 +20,8 @@
 <p>5.阻擋頭<a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/bdad01c699ee829c47e15cff">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/bdad01c699ee829c47e15cff</a></p>
 <p><span><img alt="" height="377" src="/images/ p37_23-03-49.png" width="860"/><img alt="" height="929" src="/images/4.png" width="1920"/></span></p>
 <p>6.承坐<a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/40e25ee1c83a686284a42cb7">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/40e25ee1c83a686284a42cb7</a></p>
-<p><span><img alt="" height="377" src="/images/ p37_23-07-14.png" width="860"/><img alt="" height="934" src="/images/5.png" width="1920"/></span></p><h3>零件工程圖</h3>
+<p><span><img alt="" height="377" src="/images/ p37_23-07-14.png" width="860"/><img alt="" height="934" src="/images/5.png" width="1920"/></span></p>
+<h3>零件工程圖</h3>
 <h4>W15</h4>
 <p><span>零件 1.</span></p>
 <p><a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/7f5c211fe41fc4d1504150bd"><span>https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/w/db704115cbe56e5300e02567/e/7f5c211fe41fc4d1504150bd</span></a></p>
@@ -38,7 +40,8 @@
 <p><img alt="" height="384" src="/images/BOM表.PNG" width="401"/></p>
 <h4>3D 零組件爆炸圖</h4>
 <p><a href="https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/v/a319ab46d811cbeeca590058/e/f988ed519cdd046de59489e1">https://cad.onshape.com/documents/ebacb04e08b85ff6021efc57/v/a319ab46d811cbeeca590058/e/f988ed519cdd046de59489e1</a></p>
-<p><img alt="" height="925" src="/images/6.png" width="1920"/></p><h2>V-rep 動態模擬</h2>
+<p><img alt="" height="925" src="/images/6.png" width="1920"/></p>
+<h2>V-rep 動態模擬</h2>
 <h3>手足球自動回擊</h3>
 <h4>W13</h4>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/gjz6wJoysU0" width="560"></iframe></p>
@@ -339,7 +342,8 @@ while True:
         vrep.simxSetJointTargetVelocity(clientID,rmov_handle,Mvv,vrep.simx_opmode_oneshot_wait)</pre>
 <h2>期末報告</h2>
 <p>期末報告影片:</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/1nklLNkP4iQ" width="560"></iframe></p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/UTVs16ZQo6M" width="560"></iframe></p>
+<p></p>
 <p>評分比例:</p>
 <p>1.學員出席 (20%)<br/>自評20分</p>
 <p>2.Github 倉儲管理 (20%)<br/>自評12分</p>
@@ -349,7 +353,69 @@ while True:
 <p>總分70分</p>
 <p>但因影片延期繳交只求老師能給60分</p>
 <p></p>
-<p></p><h1>期中課程內容</h1>
+<p></p><h2>期末考試題目</h2>
+<h3>測試影片</h3>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/YwV2J4SOTlk" width="560"></iframe></p>
+<p></p>
+<p>程式碼:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import vrep
+import vrep
+import sys, math
+import keyboard
+# child threaded script: 
+# 內建使用 port 19997 若要加入其他 port, 在  serve 端程式納入
+#simExtRemoteApiStart(19999)
+  
+vrep.simxFinish(-1)
+  
+clientID = vrep.simxStart('127.0.0.1', 19997, True, True, 5000, 5)
+KickBallV = 360  
+n=1
+U_KickBallVel = (math.pi/180)*KickBallV
+D_KickBallVel = -(math.pi/180)*KickBallV
+if clientID!= -1:
+    print("Connected to remote server")
+else:
+    print('Connection not successful')
+    sys.exit('Could not connect')
+
+errorCode,mov_handle=vrep.simxGetObjectHandle(clientID,'mov',vrep.simx_opmode_oneshot_wait)
+errorCode,lrev_handle=vrep.simxGetObjectHandle(clientID,'Lrev', vrep.simx_opmode_oneshot_wait)
+errorCode,rrev_handle=vrep.simxGetObjectHandle(clientID,'Rrev',vrep.simx_opmode_oneshot_wait)
+
+
+#vrep.simxSetJointTargetVelocity(clientID,mov_handle,0,vrep.simx_opmode_oneshot_wait)
+#vrep.simxSetJointTargetVelocity(clientID,lrev_handle,0,vrep.simx_opmode_oneshot_wait)
+#vrep.simxSetJointTargetVelocity(clientID,rrev_handle,0,vrep.simx_opmode_oneshot_wait)
+
+vrep.simxStartSimulation(clientID,vrep.simx_opmode_oneshot_wait)
+#vrep.simxSetJointTargetVelocity(clientID,P1_handle,5,vrep.simx_opmode_oneshot_wait)
+while True:
+    try:
+            if keyboard.is_pressed('a'): 
+                vrep.simxSetJointTargetVelocity(clientID,lrev_handle,U_KickBallVel ,vrep.simx_opmode_oneshot_wait)
+            else:
+                vrep.simxSetJointTargetVelocity(clientID,lrev_handle,D_KickBallVel ,vrep.simx_opmode_oneshot_wait)
+            if keyboard.is_pressed('l'):  
+                vrep.simxSetJointTargetVelocity(clientID,rrev_handle,D_KickBallVel ,vrep.simx_opmode_oneshot_wait)
+            else:
+                vrep.simxSetJointTargetVelocity(clientID,rrev_handle,U_KickBallVel ,vrep.simx_opmode_oneshot_wait)
+            if keyboard.is_pressed('up'):  
+                vrep.simxSetJointTargetVelocity(clientID,mov_handle,-1,vrep.simx_opmode_oneshot_wait)
+            else:
+                vrep.simxSetJointTargetVelocity(clientID,mov_handle,1,vrep.simx_opmode_oneshot_wait)
+                #pass
+    except:
+            break
+</pre><h3>onshape零組件</h3>
+<p>組合圖</p>
+<p><img alt="" height="934" src="/images/10.png" width="1920"/></p>
+<p>球檯</p>
+<p><img alt="" height="929" src="/images/13.png" width="1920"/></p>
+<p>發球桿</p>
+<p><img alt="" height="932" src="/images/11.png" width="1920"/></p>
+<p>擊球桿</p>
+<p><img alt="" height="931" src="/images/12.png" width="1920"/></p><h1>期中課程內容</h1>
 <p>操作影片課程內容整理</p>
 <h5>協同產品設計實習-AG6</h5>
 <p>課程初衷<span>「將技術放在學生體驗的最前沿」</span></p>
